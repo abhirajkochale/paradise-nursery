@@ -1,38 +1,42 @@
+/* About Us Section - Clean Botanical Store Aesthetic */
+
 .about-section {
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  min-height: calc(100vh - 100px);
+  padding: 4rem 1.5rem;
+  background-color: var(--color-bg);
 }
 
 .about-container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .about-section h2 {
   text-align: center;
-  font-size: 2.5rem;
-  color: #27ae60;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.5px;
+  position: relative;
 }
 
 .about-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .about-text h3 {
-  color: #2ecc71;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .about-text h3:first-child {
@@ -40,57 +44,94 @@
 }
 
 .about-text p {
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  text-align: justify;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-size: 0.98rem;
+  margin-bottom: 1.25rem;
 }
 
 .features-list {
   list-style: none;
   padding: 0;
-  color: #555;
+  margin: 0.75rem 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .features-list li {
-  padding: 0.5rem 0;
-  line-height: 1.8;
-  color: #27ae60;
+  padding: 0.4rem 0.6rem;
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: 0.92rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
 .about-contact {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #2ecc71;
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  height: fit-content;
 }
 
 .about-contact h3 {
-  color: #27ae60;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .contact-info p {
-  margin: 0.8rem 0;
-  color: #555;
-  line-height: 1.6;
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
 }
 
 .contact-info strong {
-  color: #333;
+  color: var(--color-text);
+  font-weight: 600;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 860px) {
   .about-content {
     grid-template-columns: 1fr;
+    padding: 1.75rem;
+    gap: 1.75rem;
   }
 
   .about-section h2 {
-    font-size: 2rem;
+    font-size: 1.85rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 2.5rem 1rem;
   }
 
-  .about-text p {
-    text-align: left;
+  .about-content {
+    padding: 1.25rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
   }
 }

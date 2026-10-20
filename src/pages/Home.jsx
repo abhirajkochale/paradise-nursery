@@ -3,12 +3,37 @@ import AboutUs from '../components/AboutUs';
 
 export default function Home() {
   return (
-    <div>
+    <div className="home-page">
       <section className="landing-page">
         <div className="landing-container">
-          <h1>🌿 Paradise Nursery</h1>
-          <p>Discover the Beauty of Plants - Your One-Stop Shop for Indoor Garden</p>
-          <Link to="/products" className="get-started-btn">Get Started</Link>
+          <div className="hero-badge">
+            <span className="hero-badge-dot"></span>
+            Fresh Botanical Collection
+          </div>
+          <h1 className="hero-title">🌿 Paradise Nursery</h1>
+          <p className="hero-tagline">
+            Where Greenery Meets Serenity — Hand-curated houseplants, vibrant succulents,
+            and fragrant herbs to bring natural beauty and calm into your living space.
+          </p>
+          <div className="hero-actions">
+            <Link to="/products" className="get-started-btn">
+              Get Started — Shop Plants
+            </Link>
+          </div>
+          <div className="hero-highlights">
+            <div className="highlight-pill">
+              <span className="highlight-icon">🌱</span>
+              <span>24+ Healthy Varieties</span>
+            </div>
+            <div className="highlight-pill">
+              <span className="highlight-icon">🪴</span>
+              <span>Beginner Friendly</span>
+            </div>
+            <div className="highlight-pill">
+              <span className="highlight-icon">✨</span>
+              <span>100% Plant Guarantee</span>
+            </div>
+          </div>
         </div>
       </section>
       <AboutUs />

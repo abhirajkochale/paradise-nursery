@@ -53,25 +53,43 @@ export default function ProductList() {
     setAddedItems(new Set(addedItems).add(product.id));
   };
 
-  const isItemAdded = (productId) => addedItems.has(productId);
+  const isItemAdded = (productId) =>
+    addedItems.has(productId) || cartItems.some(item => item.id === productId);
 
   return (
     <div className="product-list-page">
-      <h1 className="page-title">Our Plants Collection</h1>
+      <div className="products-header">
+        <span className="products-eyebrow">Botanical Collection</span>
+        <h1 className="page-title">Our Plants Collection</h1>
+        <p className="products-subtitle">
+          Healthy, hand-selected nursery plants ready to thrive in your space.
+        </p>
+      </div>
       
       {Object.entries(products).map(([category, categoryProducts]) => (
         <section key={category} className="category-section">
-          <h2 className="category-title">{category}</h2>
+          <div className="category-header">
+            <h2 className="category-title">{category}</h2>
+            <span className="category-count">{categoryProducts.length} varieties</span>
+          </div>
           <div className="products-grid">
             {categoryProducts.map(product => (
               <div key={product.id} className="product-card">
-                <div className="product-image">{product.image}</div>
-                <h3 className="product-name">{product.name}</h3>
-                <p className="product-price">${product.price}</p>
+                <div className="product-image-wrapper">
+                  <div className="product-image" role="img" aria-label={product.name}>
+                    {product.image}
+                  </div>
+                </div>
+                <div className="product-details">
+                  <span className="product-category">{category}</span>
+                  <h3 className="product-name">{product.name}</h3>
+                  <p className="product-price">${product.price.toFixed(2)}</p>
+                </div>
                 <button
                   className={`add-to-cart-btn ${isItemAdded(product.id) ? 'disabled' : ''}`}
                   onClick={() => handleAddToCart(product)}
                   disabled={isItemAdded(product.id)}
+                  aria-label={isItemAdded(product.id) ? `${product.name} already in cart` : `Add ${product.name} to cart`}
                 >
                   {isItemAdded(product.id) ? '✓ Added' : 'Add to Cart'}
                 </button>
